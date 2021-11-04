@@ -27,5 +27,5 @@ Laboratoire ALTER
 ## commande pandoc
 
 ```
-pandoc -o Mémoire.html -s --toc --toc-depth=5 --template=data/templateTOC-Notes-Biblio_CSS-JS.html -C --bibliography=data/Mémoire.json --csl=data/transversalites-Braud.csl --metadata link-citations=true --metadata notes-after-punctuation=false -V lang=fr-FR Mémoire-1ere-Partie.md
+pandoc -o Mémoire.html -s --toc --toc-depth=5 --template=data/template.html -C --bibliography=data/Mémoire.json --csl=data/transversalites-Braud.csl --metadata link-citations=true --metadata notes-after-punctuation=false -V lang=fr-FR Mémoire-1ere-Partie.md
 ```                
