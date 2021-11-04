@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" $if(lang)$ lang="$lang$" xml:lang="$lang$" $endif$$if(dir)$ dir="$dir$" $endif$>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="pandoc" />
+    $for(author-meta)$
+        <meta name="author" content="$author-meta$" />
+    $endfor$
+    $if(date-meta)$
+        <meta name="date" content="$date-meta$" />
+    $endif$
+    $if(keywords)$
+        <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ ÔÇô $endif$$pagetitle$</title>
+    <link rel="icon" type="image/png" href="data/logoAlter.png"/>
+    <style type="text/css">
+        code {
+            white-space: pre;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            color: SteelBlue;
+            text-decoration: none;
+        }
+        a:hover {
+            color: deeppink;
+        }
+        sup {
+            vertical-align: top; 
+            font-size: 0.8em;
+            position: relative; 
+            top: -0.5em;
+        }
+        span.citation a, a.footnote-ref {
+            color: tomato;
+            font-family: 'Georgia';
+            font-size: 0.8em;
+        }
+        hr {
+            border: none;
+            border-bottom: 1px solid #999;
+            width: 80%;
+        }
+        html,
+        body {
+            margin: 0;
+            margin-bottom: 4em;
+            padding: 0;
+        }
+        body {
+            background-color: MistyRose;
+            color: black;
+            font-family: 'Sitka', 'Perpetua', 'Garamond', 'Caladea', 'DejaVu', 'Georgia', 'Times New Roman', 'Times', serif;
+        }
+        #TOC {
+            position: fixed;
+            width: 20%;
+            left: 1em;
+            top: 3%;
+            max-height: 97%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: Tomato MistyRose;
+            font-family: sans-serif;
+            font-size:90%;
+                
+        }
+        #TOC::before {
+            content: "Table des Matières";
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            padding-left: 1em;
+            letter-spacing: 2px;
+            font-family: 'Caladea', 'Tahoma', 'OCR A', 'Alef';
+            color: Goldenrod;
+        }
+        .active {
+            color: tomato;
+        }
+        .active>a {
+            color:tomato;
+            font-size: 110%;
+        }
+        .footnotes {
+            position: fixed;
+            width: 30%;
+            top: 0;
+            right: 0em;
+            font-size: 80%;
+            max-height: 52%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: Tomato MistyRose;
+            padding-right: 2em;
+            padding-top: 2em;
+        }
+        .footnotes::before {
+            content: "Notes";
+            font-size: 1.2em;
+            font-weight: 600;
+            padding-top: 2em;
+            margin-bottom: 1em;
+            padding-left: 1em;
+            letter-spacing: 2px;
+            font-family: 'Caladea', 'Tahoma', 'OCR A', 'Alef';
+            color: Goldenrod;
+        }
+        .footnotes hr {
+            display:none;
+        }
+        #biblio {
+            position: fixed;
+            width: 30%;
+            top: 55%;
+            right: 0em;
+            text-align: justify;
+            font-size: 95%;
+            max-height: 45%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: Tomato MistyRose;
+            padding-right: 2em;
+            padding-left: 2em;
+            text-indent: -1em;
+        }
+        #biblio h3 {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-size:100%;
+        }
+        article {            
+            margin-left: 20%;
+            width: auto;
+            font-size: 1.2em;
+            margin-right: 30%;
+            line-height: 120%;
+            padding-left: 2em;
+            padding-right: 2em;            
+        }
+        article p {
+            hyphens: auto;
+            text-align: justify;
+            font-size: 1.2em;
+            line-height: 150%;
+        }
+        h1 {
+            font-family: 'Caladea', 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+            color: firebrick;
+            text-align: center;
+            padding-top: 3em;
+            margin-bottom: 3em;
+            line-height: 150%;
+        }
+        .pave {
+            margin-bottom: 8em;
+            margin: auto;
+            width: 45%;
+            color:teal;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid firebrick;
+            border-radius: 12px;
+            margin-top: 4em;
+            display:block;           
+        }
+        .pave p {
+            text-align: center;
+        }
+        header h1 {
+            margin-bottom: 1em;
+            width: 70%;
+            margin: auto;
+            line-height: 1.5em;
+            letter-spacing: 1px;
+        }
+        header hr {
+            width: 30%;
+            margin: auto;
+        }
+        .subtitle {
+            font-family: 'Caladea', 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+            color: firebrick;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.4em;
+            letter-spacing: 1px;
+            margin-top: 1em;
+            margin-bottom: 3em;
+            font-weight: 600;
+        }
+        .byline  {
+            color: black;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            letter-spacing: 1px;
+        }
+        .date {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1em;
+            margin-top: 2em;
+        }
+        h2 {
+            font-size: 1.25em;
+            line-height: 110%;
+            font-family: 'Century gothic', 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+            color: firebrick;
+            margin-top: 6em;
+        }
+        h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 4em;
+            margin-bottom: 2em;
+            letter-spacing: 2px;
+            font-family: 'Caladea', 'Tahoma', 'OCR A', 'Alef';
+            color: Goldenrod;
+        }
+        h4 {
+            font-family: 'Century gothic', 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+            font-size: 0.9em;
+            margin-bottom: 2em;
+            margin-top: 3em;
+            letter-spacing: 3px;
+            margin-left: 1em;
+            color: firebrick;
+        }
+        h5 {
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 1em;
+            margin-left: 2em;
+            margin-top: 2em;
+            font-family: 'Caladea', 'Tahoma', 'OCR A', 'Alef';
+            color: tomato;
+        }
+        h6 {
+            font-size: 95%;
+            margin-top: 2em;
+            line-height: 110%;
+            font-family: 'Papyrus', 'Monotype Corsiva', 'Lucida Calligraphy', 'Century gothic', 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+            color: teal;
+        }
+        img {
+            margin-top: 1em;
+            max-width: 40%;
+            height: auto;
+        }
+        figure {
+            text-align: center;
+        }
+        figcaption {
+            text-align: center;
+            font-family: 'Century gothic', 'Tahoma', 'OCR A', 'Alef';
+            font-style: italic;
+            font-size: 0.7em;
+            margin-top: 0.6em;
+        }
+        blockquote {
+            font-size: 90%;
+            color: teal;
+            margin: 2% 5%;
+            line-height: 120%;
+            padding-left: 4em;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 70%;
+            font-family: 'Raleway', 'Lato', 'Liberation sans', 'Helvetica', sans-serif;
+        }
+        th,
+        td {
+            padding: 4px 20px;
+            border-bottom: 1px solid #333;
+        }
+        .tit {
+            text-align: center;
+            letter-spacing: 0px;
+            margin-top: 1em;
+            line-height: 120%;
+        }
+        .citation {
+            color: teal;
+            font-family: 'Georgia';
+        }
+        .references {
+            line-height: 110%;
+            font-size: 0.9em;
+        }
+        .csl-entry {
+            margin-bottom: 0.5em;
+            scroll-margin-top: 3em;
+        }
+        .csl-entry a {
+            color: RosyBrown;
+        }
+        .csl-entry a:hover {
+            color: deeppink;
+        }
+        .csl-entry:target {
+            color: teal;
+            font-size: 120%;
+            border-top: 2px solid tomato;
+            border-bottom: 2px solid tomato;
+            padding-top: 0.8em;
+            padding-bottom: 0.8em;
+            transition: 0.3s;
+        }
+        li[role=doc-endnote] {
+            scroll-margin-top: 3em;
+        }
+        li[role=doc-endnote]:target {
+            color:tomato;
+            margin-top: 0.4em;
+            margin-bottom: 2em;
+            border-top: 2px solid tomato;
+            border-bottom: 2px solid tomato;
+            font-size: 120%;
+            transition: 0.3s;
+        }
+        li[role=doc-endnote]:target p {
+            color:black;
+            font-size: 120%;
+        }
+        .footnote-ref {
+            scroll-margin-top: 4em;
+        }
+        h2~p,
+        h3~p {
+            margin-left: 3em;
+            margin-bottom: 0em;
+        }
+        h4~p,
+        section ul {
+            margin-left: 3em;
+            margin-top: 0em;
+            margin-bottom: 0em;
+        }
+        li p:not(:first-child) {
+            margin-top: -1em;
+        }
+        ul li {
+            margin-top: 0.4em;
+        }
+        ul ul {
+            margin-left: -1em;
+        }
+        ol li {
+            margin-top: -0.8em;
+        }
+
+        /* Better display on printing */
+        @media print {
+            article {
+                position: relative;
+                display: block;
+                left: -2em;
+                width: auto;
+                font-size: 10pt;
+                margin: 0 auto;
+                line-height: 100%;
+            }
+            #TOC {
+                display: none;
+            }
+            #biblio,
+            #refs {
+                position: relative;
+                display: block;
+                width: auto;
+            }
+            p {
+                widows: 1;
+                orphans: 1;
+            }
+            .pagebreakafter {
+                page-break-after: always;
+            }
+            .pagebreakbefore {
+                page-break-before: always;
+            }
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+            p, code, pre, blockquote, li, span, table {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+    $if(quotes)$
+        <style type="text/css">
+            q {
+                quotes: "ÔÇ£""ÔÇØ""ÔÇÿ""ÔÇÖ";
+            }
+        </style>
+    $endif$
+    $if(highlighting-css)$
+        <style type="text/css">
+            $highlighting-css$
+        </style>
+    $endif$
+    $for(css)$
+        <link rel="stylesheet" href="$css$" type="text/css" />
+    $endfor$
+    $if(math)$
+        $math$
+    $endif$
+    $for(header-includes)$
+        $header-includes$
+    $endfor$
+    
+</head>
+
+<body>
+        
+    $for(include-before)$
+        $include-before$
+    $endfor$
+    $if(toc)$
+        <nav id="$idprefix$TOC">
+            $toc$
+        </nav>
+    $endif$
+<article>
+    $if(title)$
+        <header>
+            <h1 class="title">$title$</h1>
+            $if(subtitle)$
+                <p class="subtitle">$subtitle$</p>
+            $endif$
+            
+            $if(author)$
+                <hr>
+                <p class="byline">$author$</p>
+                <hr>
+            $endif$
+            $if(date)$
+                
+                <p class="date">$date$</p>
+                
+            $endif$
+        </header>
+    $endif$
+    $body$
+    
+    $for(include-after)$
+    $include-after$
+    $endfor$
+</article>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script async src="https://hypothes.is/embed.js"></script>
+<script type="text/javascript">
+$(window).on("scroll", function() {
+
+    var currentPos = $(window).scrollTop();
+
+    $('nav ul li a').each(function() {
+        var sectionLink = $(this);
+        var section = $(sectionLink.attr('href'));
+        if(section.position().top <= currentPos && sectionLink.offset().top + section.height() >= currentPos) {
+            $('nav ul li').removeClass('active');
+            sectionLink.parent().addClass('active');
+        }
+        else {
+            sectionLink.parent().removeClass('active');
+        }
+    });
+
+});
+</script>
+</body>
+
+</html>
