@@ -26,13 +26,13 @@ Laboratoire ALTER
 
 ## Un dossier `/data`
 
-- Bibliographie : `Mémoire.json` (export d'une collection Zotero)
-- Style CSL : `transversalites-Braud.csl` 
-- Templates `HTML`, à choisir pour la commande Pandoc :
-  - `templateTOC-Notes-Biblio_CSS-JS.html` qui inclue le code CSS et pointe vers `data/script.js`
+- Bibliographie : `Mémoire.json` (export d'une collection *Zotero*)
+- Style *CSL* : `transversalites-Braud.csl` 
+- Templates *HTML*, à choisir pour la commande *Pandoc* :
+  - `templateTOC-Notes-Biblio_CSS-JS.html` qui inclue le code *CSS* et pointe vers `data/script.js`
   - `template.html` qui pointe vers (et nécessite) :
-    - `data/style.css` pour le style CSS
-  - les deux templates pointent vers `data/script.js` pour le script (jquery) de mise en surbrillance dans la table des matières de la section en cours de lecture
+    - `data/style.css` pour le style *CSS*
+  - les deux templates pointent vers `data/script.js` pour le script (*jquery*) de mise en surbrillance dans la table des matières de la section en cours de lecture.
 
 ## Commande Pandoc
 
