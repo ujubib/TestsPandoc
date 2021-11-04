@@ -1,4 +1,4 @@
-## YAML et début du markdown
+## Bloc YAML et début du markdown
 
 ```markdown
 ---
@@ -24,8 +24,19 @@ Laboratoire ALTER
 
 ```
 
-## commande pandoc
+## Un dossier `/data`
+
+- bibliographie : `Mémoire.json` (export d'une collection Zotero)
+- style CSL : `transversalites-Braud.csl` 
+- Templates `HTML` :
+  - `templateTOC-Notes-Biblio_CSS-JS.html` qui inclue le code CSS et javascript (jquery)
+  - `template.html` qui pointe vers :
+    - `data/script.js` pour le script (jquery) de mise en surbrillance dans la table des matières de la section en cours de lecture 
+    - `data/style.css` pour le style CSS
+
+
+## Commande Pandoc
 
 ```
-pandoc -o Mémoire.html -s --toc --toc-depth=5 --template=data/template.html -C --bibliography=data/Mémoire.json --csl=data/transversalites-Braud.csl --metadata link-citations=true --metadata notes-after-punctuation=false -V lang=fr-FR Mémoire-1ere-Partie.md
+pandoc -o Mémoire-1ere-Partie.html -s --toc --toc-depth=5 --template=data/templateTOC-Notes-Biblio_CSS-JS.html -C --bibliography=data/Mémoire.json --csl=data/transversalites-Braud.csl --metadata link-citations=true --metadata notes-after-punctuation=false -V lang=fr-FR Mémoire-1ere-Partie.md
 ```                
