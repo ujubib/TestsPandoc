@@ -28,9 +28,9 @@ Laboratoire ALTER
 
 - bibliographie : `Mémoire.json` (export d'une collection Zotero)
 - style CSL : `transversalites-Braud.csl` 
-- Templates `HTML` :
+- Templates `HTML`, à choisir pour la commande Pandoc :
   - `templateTOC-Notes-Biblio_CSS-JS.html` qui inclue le code CSS et javascript (jquery)
-  - `template.html` qui pointe vers :
+  - `template.html` qui pointe vers (et nécessite) :
     - `data/script.js` pour le script (jquery) de mise en surbrillance dans la table des matières de la section en cours de lecture 
     - `data/style.css` pour le style CSS
 
