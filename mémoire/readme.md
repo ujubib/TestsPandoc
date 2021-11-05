@@ -56,7 +56,7 @@ pandoc -o Mémoire-1ere-Partie.html -s --toc --toc-depth=5 --template=data/templ
   <script async src="https://hypothes.is/embed.js"></script>
   ```
 
-- Ajout du *polyfill* `paged.js`
+- Ajout du *polyfill* ==paged.js==
   - Local 
     
     ```html
