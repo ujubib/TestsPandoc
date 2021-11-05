@@ -41,3 +41,30 @@ Laboratoire ALTER
 ```
 pandoc -o Mémoire-1ere-Partie.html -s --toc --toc-depth=5 --template=data/templateTOC-Notes-Biblio_CSS-JS.html -C --bibliography=data/Mémoire.json --csl=data/transversalites-Braud.csl --metadata link-citations=true --metadata notes-after-punctuation=false -V lang=fr-FR Mémoire-1ere-Partie.md
 ```                
+
+## Dans le *HTML*
+
+- Import de ==jquery==
+
+  ```html
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  ```
+
+- Ajout de ==hypothes.is==
+  
+  ```html
+  <script async src="https://hypothes.is/embed.js"></script>
+  ```
+
+- Ajout du *polyfill* `paged.js`
+  - Local 
+    
+    ```html
+    <script src="data/paged.polyfill.js"></script>
+    ```
+  
+  - Distant
+    
+    ```html
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    ```
